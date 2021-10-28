@@ -7,7 +7,7 @@ A simple app created for the sole purpose of benchmarking the performance of pin
 
 - run `npm install`
 - run `npm start`
-- run `npm test`
+- run `npm test` in a separate terminal window
 - check file `test-results.log` for comparison between the two loggers
 
 
