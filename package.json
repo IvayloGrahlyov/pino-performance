@@ -1,0 +1,17 @@
+{
+  "name": "express-loggers",
+  "version": "1.0.0",
+  "description": "A small Express application to test loggers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --max-old-space-size=6148 .",
+    "test": "./test.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pino": "^7.0.5",
+    "winston": "^3.3.3"
+  }
+}
