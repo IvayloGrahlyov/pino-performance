@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Remove the log files before a new test run
-rm -f ./pino.log
-rm -f ./winston.log
+# Remove old test results before a new test run
 rm -f ./test-results.log
 
 # Traverse through the test-data files and make requests for each file for both of the loggers

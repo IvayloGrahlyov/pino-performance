@@ -4,7 +4,7 @@
   "description": "A small Express application to test loggers",
   "main": "index.js",
   "scripts": {
-    "start": "node --max-old-space-size=6148 .",
+    "start": "rm -f ./pino.log ./winston.log && node --max-old-space-size=6148 .",
     "test": "./test.sh"
   },
   "author": "",
