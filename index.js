@@ -3,23 +3,30 @@ const pino = require('pino');
 const winston = require('winston');
 var loggerWinston = winston.createLogger({
   level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
   transports: [
     new winston.transports.File({ filename: 'winston.log' })
   ]
 });
 
-const loggerPino = pino({
-  transport: {
-      targets: [
-          {
-          level: 'info',
-          target: 'pino/file',
-          options: {
-              destination: './pino.log'
-          },
-        },
-      ]
-  }})
+// const loggerPino = pino({
+//   transport: {
+//       targets: [
+//           {
+//           level: 'info',
+//           target: 'pino/file',
+//           options: {
+//               destination: './pino.log'
+//           },
+//         },
+//       ]
+//   }})
+
+const stream = pino.destination({ dest: './pino.log', sync: false, minLength: 32768 })
+const loggerPino = pino(stream)
 
 const app = express();
 app.use(express.json({limit: '500mb'}))
